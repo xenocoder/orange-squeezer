@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.1.0">
+<eagle version="7.4.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -1930,15 +1930,15 @@ often used in power supply to prevent damage from reverse polarization
 </class>
 </classes>
 <parts>
-<part name="+9V1" library="mb_supply" deviceset="+9V(T)" device=""/>
-<part name="GND1" library="mb_supply" deviceset="GND(T)" device=""/>
+<part name="+9V" library="mb_supply" deviceset="+9V(T)" device=""/>
+<part name="G" library="mb_supply" deviceset="GND(T)" device=""/>
 <part name="GND2" library="mb_supply" deviceset="GND" device=""/>
 <part name="GND3" library="mb_supply" deviceset="GND" device=""/>
 <part name="GND4" library="mb_supply" deviceset="GND" device=""/>
 <part name="GND5" library="mb_supply" deviceset="GND" device=""/>
 <part name="GND6" library="mb_supply" deviceset="GND" device=""/>
-<part name="IN1" library="mb_supply" deviceset="IN(T)" device=""/>
-<part name="OUT1" library="mb_supply" deviceset="OUT(T)" device=""/>
+<part name="IN" library="mb_supply" deviceset="IN(T)" device=""/>
+<part name="OUT" library="mb_supply" deviceset="OUT(T)" device=""/>
 <part name="R1" library="mb_resistors" deviceset="6MM" device=".3" value="1M5"/>
 <part name="R2" library="mb_resistors" deviceset="6MM" device=".3" value="82k"/>
 <part name="R3" library="mb_resistors" deviceset="6MM" device=".3" value="470k"/>
@@ -1961,7 +1961,7 @@ often used in power supply to prevent damage from reverse polarization
 <part name="Q1" library="mb_trans" deviceset="2N5457" device=""/>
 <part name="Q2" library="mb_trans" deviceset="2N5457" device=""/>
 <part name="IC1" library="mb_ics" deviceset="*4558" device="N" technology="LM"/>
-<part name="POT1" library="mb_pots" deviceset="POT" device="16MM_PCB_PADS" value="A10k"/>
+<part name="VOL" library="mb_pots" deviceset="POT" device="16MM_PCB_PADS" value="A10k"/>
 <part name="POT2" library="mb_pots" deviceset="POT" device="TRIM" value="10k"/>
 <part name="D1" library="mb_diodes" deviceset="1N400X" device=".3" value="1N34A"/>
 <part name="D2" library="mb_diodes" deviceset="LED" device="3MM"/>
@@ -1975,15 +1975,15 @@ often used in power supply to prevent damage from reverse polarization
 <plain>
 </plain>
 <instances>
-<instance part="+9V1" gate="+9V" x="-7.62" y="86.36" rot="R90"/>
-<instance part="GND1" gate="GND" x="-2.54" y="50.8"/>
+<instance part="+9V" gate="+9V" x="-7.62" y="86.36" rot="R90"/>
+<instance part="G" gate="GND" x="-2.54" y="50.8"/>
 <instance part="GND2" gate="GND" x="50.8" y="15.24"/>
 <instance part="GND3" gate="GND" x="38.1" y="15.24"/>
 <instance part="GND4" gate="GND" x="63.5" y="53.34"/>
 <instance part="GND5" gate="GND" x="27.94" y="15.24"/>
 <instance part="GND6" gate="GND" x="68.58" y="15.24"/>
-<instance part="IN1" gate="G$1" x="-7.62" y="68.58"/>
-<instance part="OUT1" gate="G$1" x="116.84" y="58.42"/>
+<instance part="IN" gate="G$1" x="-7.62" y="68.58"/>
+<instance part="OUT" gate="G$1" x="116.84" y="58.42"/>
 <instance part="R1" gate="G$1" x="-2.54" y="60.96" rot="R90"/>
 <instance part="R2" gate="G$1" x="15.24" y="68.58"/>
 <instance part="R3" gate="G$1" x="40.64" y="63.5"/>
@@ -2005,7 +2005,7 @@ often used in power supply to prevent damage from reverse polarization
 <instance part="C7" gate="G$1" x="93.98" y="25.4"/>
 <instance part="Q1" gate="G$1" x="10.16" y="48.26" rot="R180"/>
 <instance part="Q2" gate="G$1" x="27.94" y="55.88" rot="R180"/>
-<instance part="POT1" gate="G$1" x="106.68" y="58.42"/>
+<instance part="VOL" gate="G$1" x="106.68" y="58.42"/>
 <instance part="POT2" gate="G$1" x="40.64" y="27.94"/>
 <instance part="D1" gate="1" x="93.98" y="50.8" rot="R270"/>
 <instance part="D2" gate="G$1" x="7.62" y="101.6" rot="R180"/>
@@ -2021,7 +2021,7 @@ often used in power supply to prevent damage from reverse polarization
 <nets>
 <net name="IN" class="0">
 <segment>
-<pinref part="IN1" gate="G$1" pin="IN"/>
+<pinref part="IN" gate="G$1" pin="IN"/>
 <pinref part="C1" gate="G$1" pin="2"/>
 <wire x1="-5.08" y1="68.58" x2="-2.54" y2="68.58" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="2"/>
@@ -2073,12 +2073,12 @@ often used in power supply to prevent damage from reverse polarization
 <wire x1="93.98" y1="22.86" x2="93.98" y2="17.78" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="POT1" gate="G$1" pin="1"/>
+<pinref part="VOL" gate="G$1" pin="1"/>
 <pinref part="GND9" gate="GND" pin="GND"/>
 <wire x1="104.14" y1="50.8" x2="104.14" y2="17.78" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="GND1" gate="GND" pin="GND"/>
+<pinref part="G" gate="GND" pin="GND"/>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="-2.54" y1="53.34" x2="-2.54" y2="55.88" width="0.1524" layer="91"/>
 </segment>
@@ -2166,7 +2166,7 @@ often used in power supply to prevent damage from reverse polarization
 <pinref part="R11" gate="G$1" pin="2"/>
 <wire x1="83.82" y1="66.04" x2="88.9" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="88.9" y1="66.04" x2="88.9" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="POT1" gate="G$1" pin="3"/>
+<pinref part="VOL" gate="G$1" pin="3"/>
 <wire x1="88.9" y1="66.04" x2="104.14" y2="66.04" width="0.1524" layer="91"/>
 <junction x="88.9" y="66.04"/>
 </segment>
@@ -2190,7 +2190,7 @@ often used in power supply to prevent damage from reverse polarization
 <net name="+9V" class="0">
 <segment>
 <pinref part="R14" gate="G$1" pin="1"/>
-<pinref part="+9V1" gate="+9V" pin="+9V"/>
+<pinref part="+9V" gate="+9V" pin="+9V"/>
 <wire x1="-2.54" y1="91.44" x2="-2.54" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="-2.54" y1="86.36" x2="-5.08" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="R4" gate="G$1" pin="2"/>
@@ -2257,8 +2257,8 @@ often used in power supply to prevent damage from reverse polarization
 </net>
 <net name="OUT" class="0">
 <segment>
-<pinref part="POT1" gate="G$1" pin="2"/>
-<pinref part="OUT1" gate="G$1" pin="OUT"/>
+<pinref part="VOL" gate="G$1" pin="2"/>
+<pinref part="OUT" gate="G$1" pin="OUT"/>
 <wire x1="109.22" y1="58.42" x2="114.3" y2="58.42" width="0.1524" layer="91"/>
 </segment>
 </net>
